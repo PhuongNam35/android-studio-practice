@@ -3,6 +3,7 @@ package com.example.travelblog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.travelblog.databinding.ActivityLoginBinding
@@ -36,6 +37,14 @@ class LoginActivity : AppCompatActivity() {
         else if (username != "admin") {
             showErrorDialog()
         }
+        else {
+            performLogin()
+        }
+    }
+
+    private fun performLogin() {
+        binding.loginButton.visibility = View.INVISIBLE
+        binding.progressBar.visibility = View.VISIBLE
     }
 
     private fun showErrorDialog() {
